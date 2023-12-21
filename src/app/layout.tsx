@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="fixed top-0 z-10 p-4 bg-[#DC213E] w-full">
+        <div className="fixed top-0 z-10 p-4 bg-[#FFFFFF] w-full">
           <Navbar />
         </div>
         <div className={clsx("mx-auto bg-white flex flex-row")}>
