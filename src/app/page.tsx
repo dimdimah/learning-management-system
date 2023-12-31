@@ -1,6 +1,8 @@
 import Image from "next/image";
 import HeaderImage from "@/components/img/header-pic.svg";
+import CardCourses from "@/components/card.components";
 import { Button } from "@/components/ui/button";
+import { ClassCards } from "@/lib/constant/data.course";
 import Link from "next/link";
 
 export default function Home() {
@@ -45,23 +47,17 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full my-8">
-          <div>
-            <a
-              className="bg-white rounded-lg w-1/5 border flex-shrink-0 overflow-hidden hover:-translate-y-1 transition-all flex flex-col h-full hover:shadow-xl"
-              href="/courses/animasi-dasar-3d"
-            >
-              <div>
-                <h1></h1>
-                <p></p>
-              </div>
-              <div>
-                <h1>Judul Materi</h1>
-                <p>Free</p>
-                <Button className="w-full border items-center justify-center rounded-md transition-colors font-semibold select-none hidden lg:inline-flex h-12 px-8 border-[#FD853A] bg-white hover:bg-[#FD853A] text-[#FD853A] hover:text-white text-lg">
-                  Pilih Kelas
-                </Button>
-              </div>
-            </a>
+          <div className="grid grid-rows-4 grid-flow-col gap-4">
+            {ClassCards.map((CardLesson) => (
+              <span key={CardLesson.id}>
+                <CardCourses
+                  title={CardLesson.title}
+                  cost={CardLesson.cost}
+                  description={CardLesson.description}
+                  imageSrc={"/public/vercel.svg"}
+                />
+              </span>
+            ))}
           </div>
         </div>
       </div>
